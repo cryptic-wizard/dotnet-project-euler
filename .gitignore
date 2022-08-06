@@ -1,12 +1,16 @@
-# Compiled C#
+# Compiled C# Files
 bin/
 obj/
 
-# Specflow
-*.feature.cs
+# C# Test Results
 TestResults/
-*.html
 
-# User Settings
+# Published C# Files
+*.nupkg
+
+# Compiled Specflow Files
+*.feature.cs
+
+# VS and VSCode User Settings
 .vs/
 *.csproj.user
