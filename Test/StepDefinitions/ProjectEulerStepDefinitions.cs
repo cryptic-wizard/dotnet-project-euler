@@ -1,0 +1,41 @@
+using ProjectEuler;
+using static ProjectEuler.ProjectEuler;
+using System;
+using TechTalk.SpecFlow;
+using Test.Support;
+using NUnit.Framework;
+
+namespace Test.StepDefinitions
+{
+    [Binding]
+    public sealed class ProjectEulerStepDefinitions
+    {
+        private readonly TestFixture testFixture = new();
+
+        public ProjectEulerStepDefinitions(TestFixture testFixture)
+        {
+            this.testFixture = testFixture;
+        }
+
+        [When(@"I calculate problem (.*)")]
+        public void WhenICalculateProblem(int problem)
+        {
+            testFixture.ProblemNumber = problem;
+            testFixture.SW.Restart();
+            testFixture.Answer = CalculateAnswer(problem);
+            testFixture.SW.Stop();
+        }
+
+        [Then(@"the answer is correct")]
+        public void ThenTheAnswerIsCorrect()
+        {
+            Assert.AreEqual(Answers[testFixture.ProblemNumber], testFixture.Answer);
+        }
+
+        [Then(@"the runtime is less than (.*) seconds")]
+        public void ThenTheRuntimeIsLessThanSeconds(int seconds)
+        {
+            Assert.Less(testFixture.SW.ElapsedMilliseconds, seconds * 1000);
+        }
+    }
+}
