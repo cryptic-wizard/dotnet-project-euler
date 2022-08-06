@@ -17,7 +17,7 @@ jobs:
         dotnet-version: '3.1.x'
     - uses: cryptic-wizard/run-specflow-tests@v1.3.1
       with:
-        test-assembly-path: Test/bin/Release/netcoreapp3.1
-        test-assembly-dll: Test.dll
+        test-assembly-path: Tests/bin/Release/netcoreapp3.1
+        test-assembly-dll: Tests.dll
         output-html: ProjectEulerTests.html
         framework: netcoreapp3.1

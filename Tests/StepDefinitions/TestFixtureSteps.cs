@@ -2,8 +2,9 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Test.Drivers;
 
-namespace Test.Support
+namespace Test.StepDefinitions
 {
     [Binding]
     public class TestFixtureSteps
