@@ -14,7 +14,7 @@ namespace ProjectEuler
         /// </summary>
         public static long Problem7()
         {
-            List<uint> primes = new List<uint>();
+            List<uint> primes = new();
             const uint targetPrime = 10001;
             bool isPrime = true;
             primes.Add(2);

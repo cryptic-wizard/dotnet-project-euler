@@ -1,14 +1,32 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace ProjectEuler
 {
+    /// <summary>
+    /// Main static class for running project euler problems
+    /// </summary>
     public static partial class ProjectEuler
     {
-        public static Dictionary<int, Func<long>> Problems = new Dictionary<int, Func<long>>()
+        private static readonly Dictionary<int, Func<long>> Problems = new()
         {
             { 7, Problem7 } 
         };
 
+        /// <summary>
+        /// Answer dictionary, used for testing
+        /// </summary>
+        public static readonly Dictionary<int, long> Answers = new()
+        {
+            { 7, 104743 },
+        };
+
+        /// <summary>
+        /// Calculates the answer of the selected problem
+        /// </summary>
+        /// <param name="problemNumber"> Project Euler problem number </param>
+        /// <returns></returns>
         public static long CalculateAnswer(int problemNumber)
         {
             if (!Problems.ContainsKey(problemNumber))
