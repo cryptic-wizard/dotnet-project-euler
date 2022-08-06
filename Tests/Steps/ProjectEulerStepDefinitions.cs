@@ -1,11 +1,6 @@
-using ProjectEuler;
-using static ProjectEuler.ProjectEuler;
 using System;
-using TechTalk.SpecFlow;
-using Test.Drivers;
-using NUnit.Framework;
 
-namespace Test.StepDefinitions
+namespace Tests.StepDefinitions
 {
     [Binding]
     public sealed class ProjectEulerStepDefinitions

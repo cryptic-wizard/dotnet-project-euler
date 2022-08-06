@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Text;
+﻿using System.Diagnostics;
 
-namespace Test.Drivers
+namespace Tests.Drivers
 {
     public class TestFixture
     {
