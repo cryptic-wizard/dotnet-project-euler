@@ -1,4 +1,8 @@
 using System;
+using TechTalk.SpecFlow;
+using Tests.Drivers;
+using NUnit.Framework;
+using static ProjectEuler.ProjectEuler;
 
 namespace Tests.StepDefinitions
 {
