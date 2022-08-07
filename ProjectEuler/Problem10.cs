@@ -10,15 +10,36 @@ namespace ProjectEuler
         /// </summary>
         public static long Problem10()
         {
-            List<uint> primes = new();
             const uint MAX_VALUE = 2000000;
+            long answer = 0;
+            List<uint> primes = PrimesUpTo(MAX_VALUE);
+
+            // Calculate sum
+            foreach (uint n in primes)
+            {
+                answer += n;
+            }
+
+            return answer;
+        }
+
+        /// <summary>
+        /// <example>
+        /// <code> { 2, 3, 5, 7, 11, 13, 17, 19, ... } </code>
+        /// </example>
+        /// </summary>
+        /// <param name="maxValue"> Upper-bound of primes </param>
+        /// <returns> A list of primes </returns>
+        public static List<uint> PrimesUpTo(long maxValue)
+        {
+            List<uint> primes = new();
             bool isPrime = true;
             double sqrt;
-            long answer = 0;
+            
             primes.Add(2);
 
             // For every odd number
-            for (uint i = 3; i < MAX_VALUE; i += 2)
+            for (uint i = 3; i < maxValue; i += 2)
             {
                 sqrt = Math.Sqrt(i);
 
@@ -48,13 +69,7 @@ namespace ProjectEuler
                 }
             }
 
-            // Calculate sum
-            foreach (uint n in primes)
-            {
-                answer += n;
-            }
-
-            return answer;
+            return primes;
         }
     }
 }

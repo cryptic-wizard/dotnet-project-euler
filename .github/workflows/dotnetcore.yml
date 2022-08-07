@@ -1,9 +1,7 @@
 name: .NET Core 3.1
 on:
-  push:
-    #branches: [ main ]
-  #pull_request:
-    #branches: [ main ]
+  pull_request:
+    branches: [ main ]
 
 jobs:
   BuildAndTest:
