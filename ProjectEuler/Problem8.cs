@@ -6,8 +6,13 @@ namespace ProjectEuler
 {
     public static partial class ProjectEuler
     {
-        private const byte ADJACENT_DIGITS = 13;
-        private static readonly string Text =
+        /// <summary>
+        /// <see href="https://projecteuler.net/problem=8"/>
+        /// </summary>
+        public static long Problem8()
+        {
+            const byte ADJACENT_DIGITS = 13;
+            const string TEXT =
             @"73167176531330624919225119674426574742355349194934
             96983520312774506326239578318016984801869478851843
             85861560789112949495459501737958331952853208805511
@@ -29,25 +34,24 @@ namespace ProjectEuler
             05886116467109405077541002256983155200055935729725
             71636269561882670428252483600823257530420752963450";
 
-        /// <summary>
-        /// <see href="https://projecteuler.net/problem=8"/>
-        /// </summary>
-        public static long Problem8()
-        {
             long answer = 0;
             long possibleAnswer;
             int numbersToSkip = 0;
             byte nextNumber = 0;
-            byte[] numbers = GetNumbers(Text);
+            byte[] numbers = GetNumbers(TEXT);
 
+            // For every digit index
             for (int i = 0; i < numbers.Length - ADJACENT_DIGITS; i++)
             {
                 possibleAnswer = 1;
 
+                // Calculate the product with the adjacent digits
                 for (int j = 0; j < ADJACENT_DIGITS; j++)
                 {
                     nextNumber = numbers[i + j];
 
+                    // If a 0 is encountered, several number combinations can be skipped
+                    // because the product will be 0 for all of them
                     if (nextNumber == 0)
                     {
                         possibleAnswer = 0;
@@ -60,6 +64,7 @@ namespace ProjectEuler
                     }
                 }
 
+                // Skip ahead if zero was found
                 if (possibleAnswer == 0)
                 {
                     i += numbersToSkip;
@@ -73,6 +78,11 @@ namespace ProjectEuler
             return answer;
         }
 
+        /// <summary>
+        /// Converts the text string to a byte array
+        /// </summary>
+        /// <param name="text"> Provided problem text </param>
+        /// <returns> Representation of text as individual digits </returns>
         private static byte[] GetNumbers(string text)
         {
             List<byte> numbers = new();
@@ -80,6 +90,7 @@ namespace ProjectEuler
 
             foreach (char c in chars)
             {
+                // Ignore ASCII characters that are not digits
                 if (c < 48 || c > 57)
                 {
                     continue;
@@ -91,6 +102,11 @@ namespace ProjectEuler
             return numbers.ToArray();
         }
 
+        /// <summary>
+        /// Converts from ASCII to byte value
+        /// </summary>
+        /// <param name="c"> ASCII digit character </param>
+        /// <returns> 0-9 </returns>
         private static byte ASCIICharToByte(char c)
         {
             return (byte)(c - 48);
