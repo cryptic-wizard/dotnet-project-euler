@@ -15,22 +15,33 @@ namespace ProjectEuler
         public static long Problem7()
         {
             List<uint> primes = new();
-            const uint targetPrime = 10001;
+            const uint TARGET_PRIME = 10001;
             bool isPrime = true;
+            double sqrt;
             primes.Add(2);
 
+            // For every odd number
             for (uint i = 3; i < uint.MaxValue; i += 2)
-            {      
+            {
+                sqrt = Math.Sqrt(i);
+
+                // See if the number is divisible by all of the primes less than it
                 foreach (uint n in primes)
                 {
-                    if (i % n == 0)
+                    // Numbers above the square root are redundant
+                    if (n > sqrt)
+                    {
+                        break;
+                    }
+                    else if (i % n == 0)
                     {
                         isPrime = false;
                         break;
                     }
                 }
 
-                if (isPrime && primes.Count == targetPrime - 1)
+                // Update prime list or return with 10001th prime
+                if (isPrime && primes.Count == TARGET_PRIME - 1)
                 {
                     return i;
                 }
