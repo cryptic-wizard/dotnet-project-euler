@@ -11,7 +11,8 @@ namespace ProjectEuler
     {
         private static readonly Dictionary<int, Func<long>> Problems = new()
         {
-            { 7, Problem7 } 
+            { 7, Problem7 },
+            { 8, Problem8 },
         };
 
         /// <summary>
@@ -20,6 +21,7 @@ namespace ProjectEuler
         public static readonly Dictionary<int, long> Answers = new()
         {
             { 7, 104743 },
+            { 8, 23514624000 },
         };
 
         /// <summary>
@@ -36,6 +38,12 @@ namespace ProjectEuler
             }
 
             return Problems[problemNumber]();
+        }
+
+        private static void PrintAnswer(int problemNumber, long answer)
+        {
+            Console.WriteLine("Problem #" + problemNumber);
+            Console.WriteLine("\tAnswer = " + answer);
         }
 
         /// <summary>
