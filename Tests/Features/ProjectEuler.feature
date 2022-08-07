@@ -19,3 +19,8 @@ Scenario: Problem 10
 	When I calculate problem 10
 	Then the answer is correct
 	And the runtime is less than 1 seconds
+
+Scenario: Problem 11
+	When I calculate problem 11
+	Then the answer is correct
+	And the runtime is less than 10 ms

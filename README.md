@@ -12,7 +12,7 @@ ProjectEuler.CalculateAnswer(7);
 ```
 
 ## Problems Implemented
-7, 8, 9, 10
+7, 8, 9, 10, 11
 
 ## Tools
 * [Visual Studio](https://visualstudio.microsoft.com/vs/)

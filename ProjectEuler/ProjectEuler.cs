@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 
 namespace ProjectEuler
 {
@@ -15,6 +14,7 @@ namespace ProjectEuler
             { 8, Problem8 },
             { 9, Problem9 },
             { 10, Problem10 },
+            { 11, Problem11 },
         };
 
         /// <summary>
@@ -26,6 +26,7 @@ namespace ProjectEuler
             { 8, 23514624000 },
             { 9, 31875000 },
             { 10, 142913828922 },
+            { 11, 70600674 },
         };
 
         /// <summary>
