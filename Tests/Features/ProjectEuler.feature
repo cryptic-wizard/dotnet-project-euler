@@ -34,3 +34,8 @@ Scenario: Problem 13
 	When I calculate problem 13
 	Then the answer is correct
 	And the runtime is less than 50 ms
+
+Scenario: Problem 14
+	When I calculate problem 14
+	Then the answer is correct
+	And the runtime is less than 5 seconds

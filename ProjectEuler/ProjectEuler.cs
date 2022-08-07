@@ -17,6 +17,7 @@ namespace ProjectEuler
             { 11, Problem11 },
             { 12, Problem12 },
             { 13, Problem13 },
+            { 14, Problem14 },
         };
 
         /// <summary>
@@ -31,6 +32,7 @@ namespace ProjectEuler
             { 11, 70600674 },
             { 12, 76576500 },
             { 13, 5537376230 },
+            { 14, 837799 },
         };
 
         /// <summary>
