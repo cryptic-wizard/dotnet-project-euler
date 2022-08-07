@@ -29,7 +29,6 @@ namespace ProjectEuler
 
                     if (IsPythagoreanTriplet(a,b,c))
                     {
-                        Console.WriteLine(a.ToString() + ',' + b.ToString() + ',' + c.ToString());
                         return a * b * c;
                     }
                 }
@@ -40,12 +39,15 @@ namespace ProjectEuler
 
         /// <summary>
         /// Determines if provided integers are a pythagorean triplet
+        /// <example>
+        /// <code> (3,4,5) (5,12,13) </code>
+        /// </example>
         /// </summary>
         /// <param name="a"> side a </param>
         /// <param name="b"> side b </param>
         /// <param name="c"> hypotenuse </param>
         /// <returns> bool </returns>
-        private static bool IsPythagoreanTriplet(int a, int b, int c)
+        public static bool IsPythagoreanTriplet(int a, int b, int c)
         {
             if (a*a + b*b == c*c)
             {
