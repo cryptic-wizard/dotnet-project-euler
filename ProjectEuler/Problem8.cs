@@ -104,10 +104,13 @@ namespace ProjectEuler
 
         /// <summary>
         /// Converts from ASCII to byte value
+        /// <example>
+        /// <code> '7' returns 7 </code>
+        /// </example>
         /// </summary>
         /// <param name="c"> ASCII digit character </param>
         /// <returns> 0-9 </returns>
-        private static byte ASCIICharToByte(char c)
+        public static byte ASCIICharToByte(char c)
         {
             return (byte)(c - 48);
         }
