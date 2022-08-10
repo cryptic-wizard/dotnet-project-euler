@@ -25,10 +25,10 @@ namespace Tests.StepDefinitions
             testFixture.SW.Stop();
         }
 
-        [Then(@"the answer is correct")]
-        public void ThenTheAnswerIsCorrect()
+        [Then(@"the answer is (\d*)")]
+        public void ThenTheAnswerIs(long answer)
         {
-            Assert.AreEqual(Answers[testFixture.ProblemNumber], testFixture.Answer);
+            Assert.AreEqual(answer, testFixture.Answer);
         }
 
         [Then(@"the runtime is less than (\d*) seconds")]

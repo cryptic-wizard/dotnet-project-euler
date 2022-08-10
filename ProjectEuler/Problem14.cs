@@ -20,7 +20,7 @@ namespace ProjectEuler
 
             for (int i = 1; i < MAX_VALUE; i++)
             {
-                length = collatz.GetSequenceLength(i);
+                length = collatz.GetLength(i);
 
                 if (length > answerLength)
                 {
