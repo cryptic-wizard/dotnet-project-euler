@@ -44,3 +44,8 @@ Scenario: Problem 15
 	When I calculate problem 15
 	Then the answer is 137846528820
 	And the runtime is less than 50 ms
+
+Scenario: Problem 16
+	When I calculate problem 16
+	Then the answer is 1366
+	And the runtime is less than 10 ms
