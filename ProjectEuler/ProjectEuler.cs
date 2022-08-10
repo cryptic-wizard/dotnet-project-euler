@@ -18,21 +18,7 @@ namespace ProjectEuler
             { 12, Problem12 },
             { 13, Problem13 },
             { 14, Problem14 },
-        };
-
-        /// <summary>
-        /// Answer dictionary, used for testing
-        /// </summary>
-        public static readonly Dictionary<int, long> Answers = new()
-        {
-            { 7, 104743 },
-            { 8, 23514624000 },
-            { 9, 31875000 },
-            { 10, 142913828922 },
-            { 11, 70600674 },
-            { 12, 76576500 },
-            { 13, 5537376230 },
-            { 14, 837799 },
+            { 15, Problem15 },
         };
 
         /// <summary>

@@ -9,7 +9,7 @@ namespace ProjectEuler.Utilities
     /// </summary>
     public class CollatzSequence
     {
-        public readonly Dictionary<long, long> SequenceLengthDictionary = new();
+        public readonly Dictionary<long, long> LengthDictionary = new();
 
         /// <summary>
         /// Generates a Collatz Sequence
@@ -47,16 +47,16 @@ namespace ProjectEuler.Utilities
         /// </summary>
         /// <param name="seed"></param>
         /// <returns></returns>
-        public long GetSequenceLength(long seed)
+        public long GetLength(long seed)
         {
             long key = seed;
             long length = 0;
 
             while (key != 1)
             {
-                if (SequenceLengthDictionary.ContainsKey(key))
+                if (LengthDictionary.ContainsKey(key))
                 {
-                    length += SequenceLengthDictionary[key];
+                    length += LengthDictionary[key];
                     return length;
                 }
 
@@ -73,9 +73,9 @@ namespace ProjectEuler.Utilities
             }
             length++; // 1 is always part of the sequence
 
-            if (!SequenceLengthDictionary.ContainsKey(seed))
+            if (!LengthDictionary.ContainsKey(seed))
             {
-                SequenceLengthDictionary[seed] = length;
+                LengthDictionary[seed] = length;
             }
 
             return length;
