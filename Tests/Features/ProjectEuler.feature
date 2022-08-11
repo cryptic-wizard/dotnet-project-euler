@@ -1,5 +1,10 @@
 ﻿Feature: Project Euler
 
+Scenario: Problem 1
+	When I calculate problem 1
+	Then the answer is 233168
+	And the runtime is less than 200 ms
+
 Scenario: Problem 7
 	When I calculate problem 7
 	Then the answer is 104743

@@ -10,6 +10,7 @@ namespace ProjectEuler
     {
         private static readonly Dictionary<int, Func<long>> Problems = new()
         {
+            { 1, Problem1 },
             { 7, Problem7 },
             { 8, Problem8 },
             { 9, Problem9 },
