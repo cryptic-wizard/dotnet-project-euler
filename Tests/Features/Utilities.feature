@@ -29,3 +29,23 @@ Scenario Outline: Collatz Sequence
 	| 111111111 | 165    |
 
 # TODO: Combinatorics tests
+
+Scenario Outline: Fibonacci Numbers
+	When I get the fibonacci number of <seed>
+	Then the fibonacci number is <value>
+
+	Examples:
+	| seed | value |
+	| 1    | 1     |
+	| 6    | 8     |
+	| 10   | 55    |
+
+Scenario Outline: Fibonacci Sequence
+	When I get the fibonacci sequence of <seed>
+	Then the fibonacci sequence is <value>
+
+	Examples:
+	| seed | value                     |
+	| 1    | 0,1                       |
+	| 6    | 0,1,1,2,3,5,8			   |
+	| 10   | 0,1,1,2,3,5,8,13,21,34,55 |

@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using System.Collections.Generic;
+using System.Diagnostics;
 using System.Numerics;
 
 namespace Tests.Drivers
@@ -9,6 +10,8 @@ namespace Tests.Drivers
         public long Answer;
         public int ProblemNumber;
         public BigInteger Factorial;
+        public List<long> FibonacciSequence;
         public long CollatzLength;
+        public long Value;
     }
 }
