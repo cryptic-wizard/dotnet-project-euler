@@ -5,6 +5,8 @@ using NUnit.Framework;
 using static ProjectEuler.ProjectEuler;
 using ProjectEuler.Utilities;
 using System.Numerics;
+using System.Linq;
+using System.Collections.Generic;
 
 namespace Tests.StepDefinitions
 {
@@ -32,6 +34,21 @@ namespace Tests.StepDefinitions
             testFixture.CollatzLength = collatz.GetLength(seed);
         }
 
+        [When(@"I get the fibonacci number of (\d*)")]
+        public void WhenIGetTheFibonacciSequenceTermOf(int seed)
+        {
+            Fibonacci fibonacci = new();
+            testFixture.Value = fibonacci.GetNumber(seed);
+        }
+
+        [When(@"I get the fibonacci sequence of (\d*)")]
+        public void WhenIGetTheFibonacciSequenceOf(int seed)
+        {
+            Fibonacci fibonacci = new();
+            testFixture.FibonacciSequence = fibonacci.GetSequence(seed);
+        }
+
+
         [Then(@"the factorial is (.*)")]
         public void ThenTheFactorialIs(string factorial)
         {
@@ -43,6 +60,19 @@ namespace Tests.StepDefinitions
         {
 
             Assert.AreEqual(length, testFixture.CollatzLength);
+        }
+
+        [Then(@"the fibonacci number is (\d*)")]
+        public void ThenTheFibonacciSequenceTermIs(long value)
+        {
+            Assert.AreEqual(value, testFixture.Value);
+        }
+
+        [Then(@"the fibonacci sequence is (.*)")]
+        public void ThenTheFibonacciSequenceIs(string sequenceString)
+        {
+            List<long> sequence = sequenceString.Split(',').Select(t => long.Parse(t)).ToList();
+            Assert.AreEqual(sequence, testFixture.FibonacciSequence);
         }
     }
 }
