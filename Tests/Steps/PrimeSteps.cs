@@ -23,13 +23,13 @@ namespace Tests.StepDefinitions
         [When(@"I check if (\d*) is prime")]
         public void WhenICheckIfIsPrime(long value)
         {
-            testFixture.IsPrime = Prime.IsPrime(value);
+            testFixture.BoolResult = Prime.IsPrime(value);
         }
 
         [When(@"I check if (\d*) is composite")]
         public void WhenICheckIfIsComposite(long value)
         {
-            testFixture.IsPrime = !Prime.IsComposite(value);
+            testFixture.BoolResult = !Prime.IsComposite(value);
         }
 
         [When(@"I get the largest prime factor of (\d*)")]
@@ -41,7 +41,7 @@ namespace Tests.StepDefinitions
         [Then(@"the prime result is (.*)")]
         public void ThenThePrimeResultIsTrue(bool truthiness)
         {
-            Assert.AreEqual(truthiness, testFixture.IsPrime);
+            Assert.AreEqual(truthiness, testFixture.BoolResult);
         }
     }
 }

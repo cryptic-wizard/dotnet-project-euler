@@ -31,14 +31,14 @@ namespace Tests.StepDefinitions
         public void WhenIGetTheLengthOfTheCollatzSequenceOf(int seed)
         {
             CollatzSequence collatz = new();
-            testFixture.CollatzLength = collatz.GetLength(seed);
+            testFixture.Answer = collatz.GetLength(seed);
         }
 
         [When(@"I get the fibonacci number of (\d*)")]
         public void WhenIGetTheFibonacciSequenceTermOf(int seed)
         {
             Fibonacci fibonacci = new();
-            testFixture.Value = fibonacci.GetNumber(seed);
+            testFixture.Answer = fibonacci.GetNumber(seed);
         }
 
         [When(@"I get the fibonacci sequence of (\d*)")]
@@ -46,6 +46,12 @@ namespace Tests.StepDefinitions
         {
             Fibonacci fibonacci = new();
             testFixture.FibonacciSequence = fibonacci.GetSequence(seed);
+        }
+
+        [When(@"I check if (.*) is a palindrome")]
+        public void WhenICheckIfAbbaIsAPalindrome(string word)
+        {
+            testFixture.BoolResult = Palindrome.IsPalindrome(word);
         }
 
         [Then(@"the factorial is (.*)")]
@@ -58,13 +64,13 @@ namespace Tests.StepDefinitions
         public void ThenTheLengthOfTheCollatzSequenceIs(long length)
         {
 
-            Assert.AreEqual(length, testFixture.CollatzLength);
+            Assert.AreEqual(length, testFixture.Answer);
         }
 
         [Then(@"the fibonacci number is (\d*)")]
         public void ThenTheFibonacciSequenceTermIs(long value)
         {
-            Assert.AreEqual(value, testFixture.Value);
+            Assert.AreEqual(value, testFixture.Answer);
         }
 
         [Then(@"the fibonacci sequence is (.*)")]
@@ -73,5 +79,12 @@ namespace Tests.StepDefinitions
             List<long> sequence = sequenceString.Split(',').Select(t => long.Parse(t)).ToList();
             Assert.AreEqual(sequence, testFixture.FibonacciSequence);
         }
+
+        [Then(@"the bool result is (.*)")]
+        public void ThenTheBoolResultIsTrue(bool result)
+        {
+            Assert.AreEqual(result, testFixture.BoolResult);
+        }
+
     }
 }
