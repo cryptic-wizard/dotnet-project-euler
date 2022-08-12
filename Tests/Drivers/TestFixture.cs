@@ -6,13 +6,11 @@ namespace Tests.Drivers
 {
     public class TestFixture
     {
-        public bool IsPrime = false;
+        public bool BoolResult = false;
         public Stopwatch SW = new();
         public long Answer;
         public int ProblemNumber;
         public BigInteger Factorial;
         public List<long> FibonacciSequence;
-        public long CollatzLength;
-        public long Value;
     }
 }
