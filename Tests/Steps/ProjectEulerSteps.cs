@@ -7,11 +7,11 @@ using static ProjectEuler.ProjectEuler;
 namespace Tests.StepDefinitions
 {
     [Binding]
-    public sealed class ProjectEulerStepDefinitions
+    public sealed class ProjectEulerSteps
     {
         private readonly TestFixture testFixture = new();
 
-        public ProjectEulerStepDefinitions(TestFixture testFixture)
+        public ProjectEulerSteps(TestFixture testFixture)
         {
             this.testFixture = testFixture;
         }

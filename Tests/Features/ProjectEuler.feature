@@ -25,6 +25,11 @@ Scenario: Problem 5
 	Then the answer is 232792560
 	And the runtime is less than 10 ms
 
+Scenario: Problem 6
+	When I calculate problem 6
+	Then the answer is 25164150
+	And the runtime is less than 10 ms
+
 Scenario: Problem 7
 	When I calculate problem 7
 	Then the answer is 104743

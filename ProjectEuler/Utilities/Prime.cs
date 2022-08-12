@@ -8,7 +8,7 @@ namespace ProjectEuler.Utilities
     {
         public static readonly List<long> PrimeDictionary = new()
         {
-            2
+            2, 3
         };
 
         public static List<long> GetPrimesUpTo(long seed)
@@ -16,8 +16,27 @@ namespace ProjectEuler.Utilities
             bool isPrime = true;
             long sqrt;
 
+            if (seed <= PrimeDictionary[PrimeDictionary.Count - 1])
+            {
+                List<long> primes = new();
+
+                foreach (long n in PrimeDictionary)
+                {
+                    if (n <= seed)
+                    {
+                        primes.Add(n);
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+
+                return primes;
+            }
+
             // For every odd number
-            for (long i = 3; i <= seed; i += 2)
+            for (long i = PrimeDictionary[PrimeDictionary.Count - 1] + 2; i <= seed; i += 2)
             {
                 sqrt = (long)Math.Sqrt(i);
 
