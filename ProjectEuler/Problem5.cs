@@ -16,7 +16,7 @@ namespace ProjectEuler
             // Numbers divisible by 16 are also divisible by 2,4,8
             // Numbers divisible by 12 are also divisible by 2,3,4,6 which is redundant with 16,18
             const int NUMBER = 20;
-            List<int> divisors = new() { 20, 18, 16 };
+            List<long> divisors = new() { 20, 18, 16 };
 
             // To be divisible by a prime, the number must be a product of the prime
             List<long> primes = Prime.GetPrimesUpTo(NUMBER);
@@ -27,11 +27,9 @@ namespace ProjectEuler
                 primeIncrement *= p;
             }
 
-            bool answerFound = false;
-            
             for (long i = primeIncrement; i < long.MaxValue; i += primeIncrement)
             {
-                foreach (int divisor in divisors)
+                foreach (long divisor in divisors)
                 {
                     if (i%divisor == 0)
                     {
