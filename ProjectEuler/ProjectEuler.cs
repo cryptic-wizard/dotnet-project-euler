@@ -12,6 +12,7 @@ namespace ProjectEuler
         {
             { 1, Problem1 },
             { 2, Problem2 },
+            { 3, Problem3 },
             { 7, Problem7 },
             { 8, Problem8 },
             { 9, Problem9 },

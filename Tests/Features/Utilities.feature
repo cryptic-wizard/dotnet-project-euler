@@ -42,10 +42,10 @@ Scenario Outline: Fibonacci Numbers
 
 Scenario Outline: Fibonacci Sequence
 	When I get the fibonacci sequence of <seed>
-	Then the fibonacci sequence is <value>
+	Then the fibonacci sequence is <sequence>
 
 	Examples:
-	| seed | value                     |
+	| seed | sequence                  |
 	| 1    | 0,1                       |
 	| 6    | 0,1,1,2,3,5,8			   |
 	| 10   | 0,1,1,2,3,5,8,13,21,34,55 |
