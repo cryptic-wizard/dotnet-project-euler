@@ -84,3 +84,8 @@ Scenario: Problem 17
 	When I calculate problem 17
 	Then the answer is 21124
 	And the runtime is less than 10 seconds
+
+Scenario: Problem 19
+	When I calculate problem 19
+	Then the answer is 171
+	And the runtime is less than 10 ms
