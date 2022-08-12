@@ -48,7 +48,6 @@ namespace Tests.StepDefinitions
             testFixture.FibonacciSequence = fibonacci.GetSequence(seed);
         }
 
-
         [Then(@"the factorial is (.*)")]
         public void ThenTheFactorialIs(string factorial)
         {

@@ -6,6 +6,7 @@ namespace Tests.Drivers
 {
     public class TestFixture
     {
+        public bool IsPrime = false;
         public Stopwatch SW = new();
         public long Answer;
         public int ProblemNumber;
