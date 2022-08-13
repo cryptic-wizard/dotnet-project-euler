@@ -99,3 +99,8 @@ Scenario: Problem 21
 	When I calculate problem 21
 	Then the answer is 31626
 	And the runtime is less than 5 seconds
+
+Scenario: Problem 22
+	When I calculate problem 22
+	Then the answer is 871198282
+	And the runtime is less than 50 ms
