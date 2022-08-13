@@ -29,6 +29,7 @@ namespace ProjectEuler
             { 17, Problem017 },
             { 19, Problem019 },
             { 20, Problem020 },
+            { 21, Problem021 },
         };
 
         /// <summary>

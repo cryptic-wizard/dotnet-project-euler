@@ -94,3 +94,8 @@ Scenario: Problem 20
 	When I calculate problem 20
 	Then the answer is 648
 	And the runtime is less than 10 ms
+
+Scenario: Problem 21
+	When I calculate problem 21
+	Then the answer is 31626
+	And the runtime is less than 5 seconds

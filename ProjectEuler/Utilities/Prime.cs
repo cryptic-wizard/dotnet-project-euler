@@ -90,6 +90,41 @@ namespace ProjectEuler.Utilities
             return factor;
         }
 
+        public static long GetSumOfDivisors(long seed)
+        {
+            if (PrimeDictionary[PrimeDictionary.Count - 1] <= seed)
+            {
+                GetPrimesUpTo(seed);
+            }
+
+            long sum = 1; // 1 is always a factor
+            long factor;
+            List<long> divisors = new();
+
+            // Find each multiple of prime that is a divisor of seed
+            foreach (long n in PrimeDictionary)
+            {
+                if (n < seed)
+                {
+                    for (long i = 1; i < seed / n; i++)
+                    {
+                        factor = i * n;
+                        if (seed % (factor) == 0 && !divisors.Contains(factor))
+                        {
+                            divisors.Add(factor);
+                            sum += i * n;
+                        }
+                    }
+                }
+                else
+                {
+                    break;
+                }
+            }
+
+            return sum;
+        }
+
         public static bool IsPrime(long seed)
         {
             // Quick lookup
