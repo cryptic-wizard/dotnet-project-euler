@@ -104,3 +104,8 @@ Scenario: Problem 22
 	When I calculate problem 22
 	Then the answer is 871198282
 	And the runtime is less than 50 ms
+
+Scenario: Problem 23
+	When I calculate problem 23
+	Then the answer is 4179871
+	And the runtime is less than 20 seconds

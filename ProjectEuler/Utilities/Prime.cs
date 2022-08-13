@@ -92,9 +92,9 @@ namespace ProjectEuler.Utilities
 
         public static long GetSumOfDivisors(long seed)
         {
-            if (PrimeDictionary[PrimeDictionary.Count - 1] <= seed)
+            if (PrimeDictionary[PrimeDictionary.Count - 1] < Math.Sqrt(seed))
             {
-                GetPrimesUpTo(seed);
+                GetPrimesUpTo((long)Math.Sqrt(seed));
             }
 
             long sum = 1; // 1 is always a factor
@@ -104,15 +104,22 @@ namespace ProjectEuler.Utilities
             // Find each multiple of prime that is a divisor of seed
             foreach (long n in PrimeDictionary)
             {
-                if (n < seed)
+                if (n <= Math.Sqrt(seed))
                 {
                     for (long i = 1; i < seed / n; i++)
                     {
                         factor = i * n;
-                        if (seed % (factor) == 0 && !divisors.Contains(factor))
+                        if (seed % factor == 0 && !divisors.Contains(factor))
                         {
                             divisors.Add(factor);
-                            sum += i * n;
+                            sum += factor;
+
+                            factor = seed / factor;
+                            if (!divisors.Contains(factor))
+                            {
+                                divisors.Add(factor);
+                                sum += factor;
+                            }
                         }
                     }
                 }
