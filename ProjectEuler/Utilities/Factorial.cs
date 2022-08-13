@@ -10,7 +10,7 @@ namespace ProjectEuler.Utilities
     /// </summary>
     public static class Factorial
     {
-        public static readonly Dictionary<long, BigInteger> FactorialDictionary = new();
+        private static readonly Dictionary<long, BigInteger> FactorialDictionary = new();
 
         /// <summary>
         /// Gets the factorial of a number

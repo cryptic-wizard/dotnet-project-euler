@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Numerics;
 using ProjectEuler.Utilities;
 
 namespace ProjectEuler
@@ -12,27 +13,27 @@ namespace ProjectEuler
         public static long Problem002()
         {
             const long MAX_VALUE = 4000000;
-            Fibonacci fibonacci = new Fibonacci();
-            List<long> sequence;
-            long value, sum = 0;
+            List<BigInteger> sequence;
+            BigInteger sum = 0;
+            BigInteger value;
 
             for (int i = 1; i < MAX_VALUE; i++)
             {
-                value = fibonacci.GetNumber(i);
+                value = Fibonacci.GetNumber(i);
 
                 if (value > MAX_VALUE)
                 {
-                    sequence = fibonacci.GetSequence(i - 1);
+                    sequence = Fibonacci.GetSequence(i - 1);
 
-                    foreach (long term in sequence)
+                    foreach (BigInteger term in sequence)
                     {
-                        if (term % (long)2 == 0 && term <= MAX_VALUE)
+                        if (term % (BigInteger)2 == 0 && term <= MAX_VALUE)
                         {
                             sum += term;
                         }
                     }
 
-                    return sum;
+                    return (long)sum;
                 }
             }
 

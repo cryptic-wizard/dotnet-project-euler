@@ -10,8 +10,7 @@ namespace ProjectEuler
         public static long Problem009()
         {
             const int SUM = 1000;
-            const int MAX_PRODUCT = SUM * SUM;
-            int a = 1;
+            int a;
 
             // The hypotenuse of a right triangle must be larger than each of its sides
             // c > a

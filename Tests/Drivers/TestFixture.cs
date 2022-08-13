@@ -10,7 +10,7 @@ namespace Tests.Drivers
         public Stopwatch SW = new();
         public long Answer;
         public int ProblemNumber;
-        public BigInteger Factorial;
-        public List<long> FibonacciSequence;
+        public BigInteger BigIntegerAnswer;
+        public List<BigInteger> FibonacciSequence = new();
     }
 }

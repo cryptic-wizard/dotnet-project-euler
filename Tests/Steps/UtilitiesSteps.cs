@@ -23,7 +23,7 @@ namespace Tests.StepDefinitions
         [When(@"I get the factorial of (\d*)")]
         public void WhenIGetTheFactorialOf(int seed)
         {
-            testFixture.Factorial = Factorial.GetFactorial(seed);
+            testFixture.BigIntegerAnswer = Factorial.GetFactorial(seed);
         }
 
         [When(@"I get the length of the collatz sequence of (\d*)")]
@@ -36,15 +36,13 @@ namespace Tests.StepDefinitions
         [When(@"I get the fibonacci number of (\d*)")]
         public void WhenIGetTheFibonacciSequenceTermOf(int seed)
         {
-            Fibonacci fibonacci = new();
-            testFixture.Answer = fibonacci.GetNumber(seed);
+            testFixture.BigIntegerAnswer = Fibonacci.GetNumber(seed);
         }
 
         [When(@"I get the fibonacci sequence of (\d*)")]
         public void WhenIGetTheFibonacciSequenceOf(int seed)
         {
-            Fibonacci fibonacci = new();
-            testFixture.FibonacciSequence = fibonacci.GetSequence(seed);
+            testFixture.FibonacciSequence = Fibonacci.GetSequence(seed);
         }
 
         [When(@"I check if (.*) is a palindrome")]
@@ -56,26 +54,19 @@ namespace Tests.StepDefinitions
         [Then(@"the factorial is (.*)")]
         public void ThenTheFactorialIs(string factorial)
         {
-            Assert.AreEqual(BigInteger.Parse(factorial), testFixture.Factorial);
-        }
-
-        [Then(@"the length of the collatz sequence is (\d*)")]
-        public void ThenTheLengthOfTheCollatzSequenceIs(long length)
-        {
-
-            Assert.AreEqual(length, testFixture.Answer);
+            Assert.AreEqual(BigInteger.Parse(factorial), testFixture.BigIntegerAnswer);
         }
 
         [Then(@"the fibonacci number is (\d*)")]
-        public void ThenTheFibonacciSequenceTermIs(long value)
+        public void ThenTheFibonacciNumberIs(string value)
         {
-            Assert.AreEqual(value, testFixture.Answer);
+            Assert.AreEqual(BigInteger.Parse(value), testFixture.BigIntegerAnswer);
         }
 
         [Then(@"the fibonacci sequence is (.*)")]
         public void ThenTheFibonacciSequenceIs(string sequenceString)
         {
-            List<long> sequence = sequenceString.Split(',').Select(t => long.Parse(t)).ToList();
+            List<BigInteger> sequence = sequenceString.Split(',').Select(t => BigInteger.Parse(t)).ToList();
             Assert.AreEqual(sequence, testFixture.FibonacciSequence);
         }
 
