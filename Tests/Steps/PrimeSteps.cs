@@ -38,6 +38,13 @@ namespace Tests.StepDefinitions
             testFixture.Answer = Prime.GetLargestPrimeFactor(value);
         }
 
+        [When(@"I get the sum of divisors of (\d*)")]
+        public void WhenIGetTheSumOfDivisorsOf(long value)
+        {
+            testFixture.Answer = Prime.GetSumOfDivisors(value);
+        }
+
+
         [Then(@"the prime result is (.*)")]
         public void ThenThePrimeResultIsTrue(bool truthiness)
         {

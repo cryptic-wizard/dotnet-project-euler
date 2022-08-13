@@ -31,3 +31,13 @@ Scenario Outline: Largest Prime Factor
 	| 25      | 5      |
 	| 508     | 127	   |
 	| 4411200 | 919    |
+
+Scenario Outline: Sum Of Divisors
+	When I get the sum of divisors of <seed>
+	Then the answer is <answer>
+
+	Examples:
+	| seed | answer |
+	| 220  | 284    |
+	| 284  | 220    |
+	| 125  | 31     |
