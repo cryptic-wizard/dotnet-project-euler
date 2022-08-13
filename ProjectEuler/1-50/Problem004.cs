@@ -9,7 +9,7 @@ namespace ProjectEuler
         /// <summary>
         /// <see href="https://projecteuler.net/problem=4"/>
         /// </summary>
-        public static long Problem4()
+        public static long Problem004()
         {
             const int NUMBER = 1000;
             long product, largestPalindromeProduct = -1;

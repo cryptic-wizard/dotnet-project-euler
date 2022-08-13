@@ -11,7 +11,7 @@ namespace ProjectEuler
         /// <summary>
         /// <see href="https://projecteuler.net/problem=15"/>
         /// </summary>
-        public static long Problem15()
+        public static long Problem015()
         {
             const int GRID_SIZE_X = 20;
             const int GRID_SIZE_Y = 20;

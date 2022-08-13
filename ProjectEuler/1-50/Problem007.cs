@@ -1,45 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
+using ProjectEuler.Utilities;
 
 namespace ProjectEuler
 {
     public static partial class ProjectEuler
     {
         /// <summary>
-        /// <see href="https://projecteuler.net/problem=10"/>
+        /// <see href="https://projecteuler.net/problem=7"/>
         /// </summary>
-        public static long Problem10()
-        {
-            const uint MAX_VALUE = 2000000;
-            long answer = 0;
-            List<uint> primes = PrimesUpTo(MAX_VALUE);
-
-            // Calculate sum
-            foreach (uint n in primes)
-            {
-                answer += n;
-            }
-
-            return answer;
-        }
-
-        /// <summary>
-        /// <example>
-        /// <code> { 2, 3, 5, 7, 11, 13, 17, 19, ... } </code>
-        /// </example>
-        /// </summary>
-        /// <param name="maxValue"> Upper-bound of primes </param>
-        /// <returns> A list of primes </returns>
-        public static List<uint> PrimesUpTo(long maxValue)
+        public static long Problem007()
         {
             List<uint> primes = new();
+            const uint TARGET_PRIME = 10001;
             bool isPrime = true;
             double sqrt;
-            
             primes.Add(2);
 
             // For every odd number
-            for (uint i = 3; i < maxValue; i += 2)
+            for (uint i = 3; i < uint.MaxValue; i += 2)
             {
                 sqrt = Math.Sqrt(i);
 
@@ -58,8 +37,12 @@ namespace ProjectEuler
                     }
                 }
 
-                // Update primes list
-                if (isPrime)
+                // Update prime list or return with 10001th prime
+                if (isPrime && primes.Count == TARGET_PRIME - 1)
+                {
+                    return i;
+                }
+                else if (isPrime)
                 {
                     primes.Add(i);
                 }
@@ -69,7 +52,7 @@ namespace ProjectEuler
                 }
             }
 
-            return primes;
+            return -1;
         }
     }
 }

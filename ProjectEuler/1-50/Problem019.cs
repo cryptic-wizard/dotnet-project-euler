@@ -12,7 +12,7 @@ namespace ProjectEuler
         /// <summary>
         /// <see href="https://projecteuler.net/problem=19"/>
         /// </summary>
-        public static long Problem19()
+        public static long Problem019()
         {
             DateTime endDate = new(2000, 12, 31);
             DateTime date = new(1901, 1, 1); // Tuesday

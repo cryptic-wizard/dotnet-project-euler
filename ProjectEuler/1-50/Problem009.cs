@@ -7,7 +7,7 @@ namespace ProjectEuler
         /// <summary>
         /// <see href="https://projecteuler.net/problem=9"/>
         /// </summary>
-        public static long Problem9()
+        public static long Problem009()
         {
             const int SUM = 1000;
             const int MAX_PRODUCT = SUM * SUM;

@@ -8,9 +8,9 @@ namespace ProjectEuler.Utilities
     /// <summary>
     /// Factorial Helper Class
     /// </summary>
-    public class Factorial
+    public static class Factorial
     {
-        public readonly Dictionary<long, BigInteger> FactorialDictionary = new();
+        public static readonly Dictionary<long, BigInteger> FactorialDictionary = new();
 
         /// <summary>
         /// Gets the factorial of a number
@@ -20,7 +20,7 @@ namespace ProjectEuler.Utilities
         /// </summary>
         /// <param name="seed"></param>
         /// <returns></returns>
-        public BigInteger GetFactorial(int seed)
+        public static BigInteger GetFactorial(int seed)
         {
             BigInteger factorial;
 

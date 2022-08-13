@@ -89,3 +89,8 @@ Scenario: Problem 19
 	When I calculate problem 19
 	Then the answer is 171
 	And the runtime is less than 10 ms
+
+Scenario: Problem 20
+	When I calculate problem 20
+	Then the answer is 648
+	And the runtime is less than 10 ms

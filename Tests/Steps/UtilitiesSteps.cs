@@ -23,8 +23,7 @@ namespace Tests.StepDefinitions
         [When(@"I get the factorial of (\d*)")]
         public void WhenIGetTheFactorialOf(int seed)
         {
-            Factorial factorial = new();
-            testFixture.Factorial = factorial.GetFactorial(seed);
+            testFixture.Factorial = Factorial.GetFactorial(seed);
         }
 
         [When(@"I get the length of the collatz sequence of (\d*)")]

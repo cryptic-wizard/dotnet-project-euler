@@ -9,7 +9,7 @@ namespace ProjectEuler
         /// <summary>
         /// <see href="https://projecteuler.net/problem=5"/>
         /// </summary>
-        public static long Problem5()
+        public static long Problem005()
         {
             // Numbers divisible by 20 are also divisible by 2,4,5,10
             // Numbers divisible by 18 are also divisble by 2,3,6,9

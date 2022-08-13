@@ -11,7 +11,7 @@ namespace ProjectEuler
         /// <summary>
         /// <see href="https://projecteuler.net/problem=17"/>
         /// </summary>
-        public static long Problem17()
+        public static long Problem017()
         {
             Dictionary<int, string> WordDictionary = new()
             {

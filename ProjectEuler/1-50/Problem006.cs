@@ -10,7 +10,7 @@ namespace ProjectEuler
         /// <summary>
         /// <see href="https://projecteuler.net/problem=6"/>
         /// </summary>
-        public static long Problem6()
+        public static long Problem006()
         {
             const int NUMBER = 100;
             BigInteger sumOfSquares = 0, squareOfSum = 0;

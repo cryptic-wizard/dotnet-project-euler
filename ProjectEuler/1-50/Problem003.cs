@@ -9,7 +9,7 @@ namespace ProjectEuler
         /// <summary>
         /// <see href="https://projecteuler.net/problem=3"/>
         /// </summary>
-        public static long Problem3()
+        public static long Problem003()
         {
             const long NUMBER = 600851475143;
 
