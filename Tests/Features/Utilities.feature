@@ -14,7 +14,7 @@ Scenario Outline: Factorial
 
 Scenario Outline: Collatz Sequence
 	When I get the length of the collatz sequence of <seed>
-	Then the length of the collatz sequence is <length>
+	Then the answer is <length>
 
 	Examples: 
 	| seed      | length |

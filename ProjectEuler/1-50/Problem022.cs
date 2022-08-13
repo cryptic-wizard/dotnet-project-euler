@@ -21,8 +21,6 @@ namespace ProjectEuler
             const string resourceName = "ProjectEuler._1_50.p022_names.txt";
             long nameScore;
             long totalScore = 0;
-            Assembly assembly = Assembly.GetExecutingAssembly();
-            var resources = assembly.GetManifestResourceNames();
             List<string> names = GetNamesFromFile(Assembly.GetExecutingAssembly().GetManifestResourceStream(resourceName));
             names.Sort();
 
@@ -59,7 +57,6 @@ namespace ProjectEuler
 
         private static List<string> GetNamesFromFile(Stream stream)
         {
-            List<string> names = new();
             string content;
 
             if (stream != null)
@@ -76,7 +73,6 @@ namespace ProjectEuler
 
         private static List<string> GetNamesFromFile(string filePath)
         {
-            List<string> names = new();
             string content;
 
             if (File.Exists(filePath))

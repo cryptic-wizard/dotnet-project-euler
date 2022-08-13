@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Numerics;
 using System.Text;
 
 namespace ProjectEuler.Utilities
@@ -7,15 +8,13 @@ namespace ProjectEuler.Utilities
     /// <summary>
     /// Collatz Sequence Helper Class
     /// </summary>
-    public class Fibonacci
+    public static class Fibonacci
     {
-        public readonly Dictionary<long, long> ValueDictionary = new();
-
-        public Fibonacci()
+        private static readonly Dictionary<long, BigInteger> ValueDictionary = new()
         {
-            ValueDictionary.Add(0, 0);
-            ValueDictionary.Add(1, 1);
-        }
+            { 0, 0 },
+            { 1, 1 },
+        };
 
         /// <summary>
         /// Gets the value of the fibonacci sequence using the seed
@@ -25,7 +24,7 @@ namespace ProjectEuler.Utilities
         /// </summary>
         /// <param name="seed"></param>
         /// <returns></returns>
-        public long GetNumber(long seed)
+        public static BigInteger GetNumber(long seed)
         {
             if (ValueDictionary.ContainsKey(seed))
             {
@@ -33,7 +32,7 @@ namespace ProjectEuler.Utilities
             }
             else
             {
-                long value = GetNumber(seed - 1) + GetNumber(seed - 2);
+                BigInteger value = GetNumber(seed - 1) + GetNumber(seed - 2);
                 ValueDictionary.Add(seed, value);
                 return value;
             }
@@ -47,14 +46,21 @@ namespace ProjectEuler.Utilities
         /// </summary>
         /// <param name="seed"></param>
         /// <returns></returns>
-        public List<long> GetSequence(long seed)
+        public static List<BigInteger> GetSequence(long seed)
         {
             GetNumber(seed);
-            List<long> sequence = new();
+            List<BigInteger> sequence = new();
 
-            foreach(long value in ValueDictionary.Values)
+            foreach(KeyValuePair<long, BigInteger> kvp in ValueDictionary)
             {
-                sequence.Add(value);
+                if (kvp.Key <= seed)
+                {
+                    sequence.Add(kvp.Value);
+                }
+                else
+                {
+                    break;
+                }
             }
 
             return sequence;
