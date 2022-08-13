@@ -9,7 +9,7 @@ namespace ProjectEuler
         /// <summary>
         /// <see href="https://projecteuler.net/problem=14"/>
         /// </summary>
-        public static long Problem14()
+        public static long Problem014()
         {
             CollatzSequence collatz = new CollatzSequence();
             const int MAX_VALUE = 1000000;

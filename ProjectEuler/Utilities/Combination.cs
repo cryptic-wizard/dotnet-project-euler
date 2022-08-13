@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Numerics;
 using System.Text;
+using static ProjectEuler.Utilities.Factorial;
 
 namespace ProjectEuler.Utilities
 {
@@ -18,9 +19,8 @@ namespace ProjectEuler.Utilities
         /// Number of indexes
         /// </summary>
         public int Length;
-        private int[] Combo;
-        private Factorial Factorial = new();
-        private Dictionary<int, int> CurrentCombination;
+        private readonly int[] Combo;
+        private readonly Dictionary<int, int> CurrentCombination;
 
         /// <summary>
         /// 
@@ -62,7 +62,7 @@ namespace ProjectEuler.Utilities
         /// <returns></returns>
         public BigInteger GetPermutations()
         {
-            return Factorial.GetFactorial(Values) / Factorial.GetFactorial(Values - Length);
+            return GetFactorial(Values) / GetFactorial(Values - Length);
         }
 
         /// <summary>
@@ -73,7 +73,7 @@ namespace ProjectEuler.Utilities
         /// <returns></returns>
         public BigInteger GetCombinations()
         {
-            return Factorial.GetFactorial(Values) / (Factorial.GetFactorial(Length) * Factorial.GetFactorial(Values - Length));
+            return GetFactorial(Values) / (GetFactorial(Length) * GetFactorial(Values - Length));
         }
 
         /// <summary>
@@ -84,7 +84,7 @@ namespace ProjectEuler.Utilities
         /// <returns></returns>
         public BigInteger GetCombinationsWithRepitition()
         {
-            return Factorial.GetFactorial(Length + Values - 1) / (Factorial.GetFactorial(Length) * Factorial.GetFactorial(Values - 1));
+            return GetFactorial(Length + Values - 1) / (GetFactorial(Length) * GetFactorial(Values - 1));
         }
 
         /// <summary>
@@ -95,7 +95,7 @@ namespace ProjectEuler.Utilities
         /// <returns></returns>
         public BigInteger GetBinomialCoefficient()
         {
-            return Factorial.GetFactorial(Length + Values) / (Factorial.GetFactorial(Length) * Factorial.GetFactorial(Values));
+            return GetFactorial(Length + Values) / (GetFactorial(Length) * GetFactorial(Values));
         }
 
         [Obsolete]

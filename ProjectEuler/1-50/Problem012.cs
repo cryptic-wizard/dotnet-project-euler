@@ -8,7 +8,7 @@ namespace ProjectEuler
         /// <summary>
         /// <see href="https://projecteuler.net/problem=12"/>
         /// </summary>
-        public static long Problem12()
+        public static long Problem012()
         {
             const int DIVISORS = 500;
             long triangleNumber = 0;

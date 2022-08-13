@@ -9,7 +9,7 @@ namespace ProjectEuler
         /// <summary>
         /// <see href="https://projecteuler.net/problem=13"/>
         /// </summary>
-        public static long Problem13()
+        public static long Problem013()
         {
             string[] NUMBERS = new string[]
             {

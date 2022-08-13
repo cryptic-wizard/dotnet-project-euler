@@ -7,7 +7,7 @@ namespace ProjectEuler
         /// <summary>
         /// <see href="https://projecteuler.net/problem=11"/>
         /// </summary>
-        public static long Problem11()
+        public static long Problem011()
         {
             const byte SUM_SIZE = 4;
             const byte GRID_SIZE = 20;

@@ -9,7 +9,7 @@ namespace ProjectEuler
         /// <summary>
         /// <see href="https://projecteuler.net/problem=8"/>
         /// </summary>
-        public static long Problem8()
+        public static long Problem008()
         {
             const byte ADJACENT_DIGITS = 13;
             const string TEXT =

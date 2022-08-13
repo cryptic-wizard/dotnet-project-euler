@@ -11,7 +11,7 @@ namespace ProjectEuler
         /// <summary>
         /// <see href="https://projecteuler.net/problem=16"/>
         /// </summary>
-        public static long Problem16()
+        public static long Problem016()
         {
             BigInteger product = BigInteger.Pow(2, 1000);
             long sum = 0;

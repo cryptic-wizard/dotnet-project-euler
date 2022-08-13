@@ -9,7 +9,7 @@ namespace ProjectEuler
         /// <summary>
         /// <see href="https://projecteuler.net/problem=1"/>
         /// </summary>
-        public static long Problem1()
+        public static long Problem001()
         {
             const uint MAX_VALUE = 1000;
             long sum = 0;

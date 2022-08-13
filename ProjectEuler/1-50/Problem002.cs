@@ -9,7 +9,7 @@ namespace ProjectEuler
         /// <summary>
         /// <see href="https://projecteuler.net/problem=2"/>
         /// </summary>
-        public static long Problem2()
+        public static long Problem002()
         {
             const long MAX_VALUE = 4000000;
             Fibonacci fibonacci = new Fibonacci();
