@@ -42,5 +42,11 @@ namespace Tests.StepDefinitions
         {
             Assert.Less(testFixture.SW.ElapsedMilliseconds, ms);
         }
+
+        [Then(@"the runtime is less than (\d*) minutes")]
+        public void ThenTheRuntimeIsLessThanMinutes(int ms)
+        {
+            Assert.Less(testFixture.SW.ElapsedMilliseconds, ms * 1000 * 60);
+        }
     }
 }
