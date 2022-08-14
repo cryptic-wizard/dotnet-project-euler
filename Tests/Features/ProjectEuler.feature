@@ -129,3 +129,8 @@ Scenario: Problem 029
 	When I calculate problem 29
 	Then the answer is 9183
 	And the runtime is less than 50 ms
+
+Scenario: Problem 030
+	When I calculate problem 30
+	Then the answer is 443839
+	And the runtime is less than 50 ms

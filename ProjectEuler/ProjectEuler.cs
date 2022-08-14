@@ -36,6 +36,7 @@ namespace ProjectEuler
             { 27, Problem027 },
             { 28, Problem028 },
             { 29, Problem029 },
+            { 30, Problem030 },
         };
 
         /// <summary>
