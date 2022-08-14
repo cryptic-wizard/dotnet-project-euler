@@ -124,3 +124,8 @@ Scenario: Problem 028
 	When I calculate problem 28
 	Then the answer is 669171001
 	And the runtime is less than 10 ms
+
+Scenario: Problem 029
+	When I calculate problem 29
+	Then the answer is 9183
+	And the runtime is less than 50 ms
