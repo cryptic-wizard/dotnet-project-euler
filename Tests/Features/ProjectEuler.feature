@@ -134,3 +134,8 @@ Scenario: Problem 030
 	When I calculate problem 30
 	Then the answer is 443839
 	And the runtime is less than 50 ms
+
+Scenario: Problem 031
+	When I calculate problem 31
+	Then the answer is 73682
+	And the runtime is less than 5 ms
