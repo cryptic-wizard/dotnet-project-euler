@@ -19,7 +19,7 @@ namespace ProjectEuler
             long sum = 0;
 
             // Generate sum of divisor dictionary
-            Prime.GetPrimesUpTo(NUMBER);
+            Prime.CalculatePrimesUpTo(NUMBER);
             for (int i = 0; i < NUMBER; i++)
             {
                 sumOfDivisorsDictionary.Add(i, Prime.GetSumOfDivisors(i));

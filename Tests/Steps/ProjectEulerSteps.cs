@@ -16,7 +16,7 @@ namespace Tests.StepDefinitions
             this.testFixture = testFixture;
         }
 
-        [When(@"I calculate problem (\d*)")]
+        [When(@"I calculate problem (\d+)")]
         public void WhenICalculateProblem(int problem)
         {
             testFixture.ProblemNumber = problem;
@@ -25,25 +25,25 @@ namespace Tests.StepDefinitions
             testFixture.SW.Stop();
         }
 
-        [Then(@"the answer is (\d*)")]
+        [Then(@"the answer is (-{0,1}\d+)")]
         public void ThenTheAnswerIs(long answer)
         {
             Assert.AreEqual(answer, testFixture.Answer);
         }
 
-        [Then(@"the runtime is less than (\d*) seconds")]
+        [Then(@"the runtime is less than (\d+) seconds")]
         public void ThenTheRuntimeIsLessThanSeconds(int seconds)
         {
             Assert.Less(testFixture.SW.ElapsedMilliseconds, seconds * 1000);
         }
 
-        [Then(@"the runtime is less than (\d*) ms")]
+        [Then(@"the runtime is less than (\d+) ms")]
         public void ThenTheRuntimeIsLessThanMs(int ms)
         {
             Assert.Less(testFixture.SW.ElapsedMilliseconds, ms);
         }
 
-        [Then(@"the runtime is less than (\d*) minutes")]
+        [Then(@"the runtime is less than (\d+) minutes")]
         public void ThenTheRuntimeIsLessThanMinutes(int ms)
         {
             Assert.Less(testFixture.SW.ElapsedMilliseconds, ms * 1000 * 60);

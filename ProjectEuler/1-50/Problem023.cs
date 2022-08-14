@@ -20,7 +20,7 @@ namespace ProjectEuler
             bool sumFound;
 
             // Generate abundant numbers dictionary
-            Prime.GetPrimesUpTo((long)Math.Sqrt(MAX_VALUE));
+            Prime.CalculatePrimesUpTo((long)Math.Sqrt(MAX_VALUE));
             for (int i = 2; i <= MAX_VALUE; i++)
             {
                 if (Prime.GetSumOfDivisors(i) > i)

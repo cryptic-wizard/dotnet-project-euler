@@ -20,25 +20,25 @@ namespace Tests.StepDefinitions
             this.testFixture = testFixture;
         }
 
-        [When(@"I check if (\d*) is prime")]
+        [When(@"I check if (\d+) is prime")]
         public void WhenICheckIfIsPrime(long value)
         {
             testFixture.BoolResult = Prime.IsPrime(value);
         }
 
-        [When(@"I check if (\d*) is composite")]
+        [When(@"I check if (\d+) is composite")]
         public void WhenICheckIfIsComposite(long value)
         {
             testFixture.BoolResult = !Prime.IsComposite(value);
         }
 
-        [When(@"I get the largest prime factor of (\d*)")]
+        [When(@"I get the largest prime factor of (\d+)")]
         public void WhenIGetTheLargestPrimeFactorOf(long value)
         {
             testFixture.Answer = Prime.GetLargestPrimeFactor(value);
         }
 
-        [When(@"I get the sum of divisors of (\d*)")]
+        [When(@"I get the sum of divisors of (\d+)")]
         public void WhenIGetTheSumOfDivisorsOf(long value)
         {
             testFixture.Answer = Prime.GetSumOfDivisors(value);
