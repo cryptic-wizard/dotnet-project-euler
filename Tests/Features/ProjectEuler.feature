@@ -114,3 +114,8 @@ Scenario: Problem 025
 	When I calculate problem 25
 	Then the answer is 4782
 	And the runtime is less than 10 ms
+
+Scenario: Problem 027
+	When I calculate problem 27
+	Then the answer is -59231
+	And the runtime is less than 10 seconds

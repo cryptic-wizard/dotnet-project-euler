@@ -20,26 +20,26 @@ namespace Tests.StepDefinitions
             this.testFixture = testFixture;
         }
 
-        [When(@"I get the factorial of (\d*)")]
+        [When(@"I get the factorial of (\d+)")]
         public void WhenIGetTheFactorialOf(int seed)
         {
             testFixture.BigIntegerAnswer = Factorial.GetFactorial(seed);
         }
 
-        [When(@"I get the length of the collatz sequence of (\d*)")]
+        [When(@"I get the length of the collatz sequence of (\d+)")]
         public void WhenIGetTheLengthOfTheCollatzSequenceOf(int seed)
         {
             CollatzSequence collatz = new();
             testFixture.Answer = collatz.GetLength(seed);
         }
 
-        [When(@"I get the fibonacci number of (\d*)")]
+        [When(@"I get the fibonacci number of (\d+)")]
         public void WhenIGetTheFibonacciSequenceTermOf(int seed)
         {
             testFixture.BigIntegerAnswer = Fibonacci.GetNumber(seed);
         }
 
-        [When(@"I get the fibonacci sequence of (\d*)")]
+        [When(@"I get the fibonacci sequence of (\d+)")]
         public void WhenIGetTheFibonacciSequenceOf(int seed)
         {
             testFixture.FibonacciSequence = Fibonacci.GetSequence(seed);
@@ -57,7 +57,7 @@ namespace Tests.StepDefinitions
             Assert.AreEqual(BigInteger.Parse(factorial), testFixture.BigIntegerAnswer);
         }
 
-        [Then(@"the fibonacci number is (\d*)")]
+        [Then(@"the fibonacci number is (\d+)")]
         public void ThenTheFibonacciNumberIs(string value)
         {
             Assert.AreEqual(BigInteger.Parse(value), testFixture.BigIntegerAnswer);
