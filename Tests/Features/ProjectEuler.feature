@@ -144,3 +144,8 @@ Scenario: Problem 035
 	When I calculate problem 35
 	Then the answer is 55
 	And the runtime is less than 5 seconds
+
+Scenario: Problem 036
+	When I calculate problem 36
+	Then the answer is 872187
+	And the runtime is less than 200 ms

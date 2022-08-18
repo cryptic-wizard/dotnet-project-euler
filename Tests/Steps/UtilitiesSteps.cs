@@ -45,12 +45,6 @@ namespace Tests.StepDefinitions
             testFixture.FibonacciSequence = Fibonacci.GetSequence(seed);
         }
 
-        [When(@"I check if (.*) is a palindrome")]
-        public void WhenICheckIfAbbaIsAPalindrome(string word)
-        {
-            testFixture.BoolResult = Palindrome.IsPalindrome(word);
-        }
-
         [Then(@"the factorial is (.*)")]
         public void ThenTheFactorialIs(string factorial)
         {
