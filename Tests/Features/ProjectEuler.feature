@@ -139,3 +139,8 @@ Scenario: Problem 031
 	When I calculate problem 31
 	Then the answer is 73682
 	And the runtime is less than 5 ms
+
+Scenario: Problem 035
+	When I calculate problem 35
+	Then the answer is 55
+	And the runtime is less than 5 seconds
