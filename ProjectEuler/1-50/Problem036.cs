@@ -18,9 +18,6 @@ namespace ProjectEuler
             const int NUMBER = 1000000;
             long sum = 0;
 
-            Console.WriteLine(IsPalindrome(12321));
-            Console.WriteLine(IsPalindrome(1234));
-
             for (int i = 0; i < NUMBER; i++)
             {
                 if (IsPalindrome(i) && IsPalindrome(ToBase2(i)))

@@ -232,5 +232,57 @@ namespace ProjectEuler.Utilities
         {
             return !IsPrime(seed);
         }
+
+        /// <summary>
+        /// Checks if a prime can be truncated by MSD and LSD
+        /// </summary>
+        /// <param name="seed"></param>
+        /// <returns> true | false </returns>
+        public static bool IsTruncatable(long seed)
+        {
+            long value = seed;
+
+            // Truncate lowest sigfig
+            while (value > 0)
+            {
+                if (!IsPrime(value))
+                {
+                    return false;
+                }
+
+                value /= 10;
+            }
+
+            value = seed;
+
+            // Get length
+            int length = 1;
+            for (int i = 1; i < 64; i++)
+            {
+                if (value / (int)Math.Pow(10, i) == 0)
+                {
+                    length = i - 1;
+                    break;
+                }
+            }
+
+            // Truncate highest sigfig
+            for (int i = length; i > 0; i--)
+            {
+                value %= (int)Math.Pow(10, i);
+
+                if (value == 0)
+                {
+                    break; 
+                }
+
+                if (!IsPrime(value))
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
     }
 }
